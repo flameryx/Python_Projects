@@ -1,0 +1,13 @@
+Improvements on my Programm:
+
++ If there is a folder with the same name in server and client, download and upload should transfer the file to that folder.
+
++ Make the client work with a custom file system in another computer.
+
++ Write message: "Are you sure you want to change to (server/client)_database? Y/N"
+
++ "EXIT" command should finish the connection of the client, dont matter in what file system it is.
+
++ To change file system
+
+
