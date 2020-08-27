@@ -2,6 +2,7 @@ import sys
 sys.path.insert(1, "/home/ricky/Code/Python_Projects/Python_Projects/Python_Server/src")
 import bash_functions as bash
 
+
 def upload_command(client_connected, message):
     uploading = True
 
@@ -12,7 +13,6 @@ def upload_command(client_connected, message):
 
         if not message:
             msg = client_connected.recv(1024).decode()
-
 
         if msg == "EXIT UPLOAD":
             uploading = False
