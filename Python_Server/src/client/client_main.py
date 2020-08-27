@@ -1,16 +1,22 @@
 import socket
 import sys
-sys.path.insert(1, "/home/ricky/Code/Python_Projects/Python_Projects/Python_Server/src")
+sys.path.insert(1, "..")
 import bash_functions as bash
 import client_command_functions as cmd_func
 
 client_socket = socket.socket()
 port = 15000
 
+# Uncomment for remote host connection
+ip_address = input("Write servers' IP: ")
+
 while port < 15003:
     try:
-        # Ip address must be changed when trying to connect to server from another host
-        client_socket.connect(("localhost", port))
+        # Uncomment for remote host connection
+        client_socket.connect((ip_address, port))
+
+        # Uncomment for local host connection
+        # client_socket.connect(("localhost", port))
         break
     except:
         port += 1

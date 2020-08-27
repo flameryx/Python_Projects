@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(1, "/home/ricky/Code/Python_Projects/Python_Projects/Python_Server/src")
+sys.path.insert(1, "..")
 import bash_functions as bash
 
 
@@ -27,7 +27,6 @@ def upload_command(client_connected, message):
 
             # Receive file name and size
             upload_what = client_connected.recv(1024).decode()
-            print("Upload_what: " + upload_what)
             separator_index = upload_what.index("\n")
             file_size_str = upload_what[separator_index + 1:]
             upload_what = upload_what[:separator_index]

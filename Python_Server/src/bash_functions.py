@@ -1,5 +1,13 @@
 import os
 
+project_name = "Python_Server"
+project_name_length = len(project_name)
+
+
+def get_full_path():
+    cwd = os.getcwd()
+    return cwd
+
 
 def get_current_directory():
     cwd = os.getcwd()
@@ -21,12 +29,22 @@ def get_file_size(file_name):
 
 
 def go_client_database():
-    os.chdir("/home/ricky/Code/Python_Projects/Python_Projects/Python_Server/Client_Database")
+    path = get_full_path()
+    if project_name in path:
+        project_name_index = path.index(project_name)
+
+    database_path = path[:project_name_index + project_name_length] + "/Client_Database"
+    os.chdir(database_path)
     return
 
 
 def go_server_database():
-    os.chdir("/home/ricky/Code/Python_Projects/Python_Projects/Python_Server/Server_Database")
+    path = get_full_path()
+    if project_name in path:
+        project_name_index = path.index(project_name)
+
+    database_path = path[:project_name_index + project_name_length] + "/Server_Database"
+    os.chdir(database_path)
     return
 
 
@@ -36,23 +54,44 @@ def change_directory(directory_name):
 
 
 def save_file_list():
-    os.system('ls > /home/ricky/Code/Python_Projects/Python_Projects/Python_Server/file_list.txt')
+    path = get_full_path()
+    if project_name in path:
+        project_name_index = path.index(project_name)
+
+    file_list_path = path[:project_name_index + project_name_length] + "/file_list.txt"
+    os.system('ls > ' + file_list_path)
     return
+
 
 def delete_file_list():
-    os.system('rm /home/ricky/Code/Python_Projects/Python_Projects/Python_Server/file_list.txt')
+    path = get_full_path()
+    if project_name in path:
+        project_name_index = path.index(project_name)
+
+    file_list_path = path[:project_name_index + project_name_length] + "/file_list.txt"
+    os.system('rm ' + file_list_path)
     return
 
+
 def read_file_list():
-    f = open('/home/ricky/Code/Python_Projects/Python_Projects/Python_Server/file_list.txt', "r")
+    path = get_full_path()
+    if project_name in path:
+        project_name_index = path.index(project_name)
+
+    file_list_path = path[:project_name_index + project_name_length] + "/file_list.txt"
+
+    f = open(file_list_path, "r")
     if f.mode == "r":
         contents = f.read()
     return contents
+
 
 def list_files():
     os.system("ls")
     return
 
+
 def move_file():
     return
+
 

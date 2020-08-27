@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(1, "/home/ricky/Code/Python_Projects/Python_Projects/Python_Server/src")
+sys.path.insert(1, "..")
 import bash_functions as bash
 
 
@@ -82,6 +82,7 @@ def go_command(client_socket, files_list, file_database):
 
             if go_where not in files_list:
                 print("That's not a directory. Try again.\n")
+                continue
 
         # Deletes '\n' in the end of string for sending
         go_where = go_where[0:-1]
